@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function displaySum(){
+            let a = document.getElementById("firstInput").value;
+            let b = document.getElementById("secondInput").value;
+            
+            fetch("http://localhost:3000/sum?a="+a+"&b="+ b )
+            .then(function(response){
+                    console.log(response);
+                    
+                    response.text()
+                        .then(function(ans){
+                            document.getElementById("displayText").innerHTML = ans;                    
+                        })
+                        
+                });
+        }
+        
+        async function displaySum1(){
+            let a = document.getElementById("firstInput").value;
+            let b = document.getElementById("secondInput").value;
+            const response = await fetch("http://localhost:3000/sum?a="+a+"&b="+ b );
+            const ans = await response.text();
+            document.getElementById("displayText1").innerHTML = ans;                    
+            
+        }
+        
+        </script>
+
+    <div>
+        <input type="text" name="a" id="firstInput"></input>
+    </div>
+    <div>
+        <input type="text" id="secondInput"></input>    
+    </div>
+
+    <button onclick="displaySum()">Click Me for Promise</button>
+    <button onclick="displaySum1()">Click Me for Async Await</button>
+
+    <p id="displayText">This is displayed via promieses</p>
+    <p id="displayText1">This is displayed via Async Await</p>
+
+</body>
+</html>

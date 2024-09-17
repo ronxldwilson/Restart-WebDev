@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function displaySum(){
+            let a = document.getElementById("firstInput").value;
+            let b = document.getElementById("secondInput").value;
+
+            let sum = parseInt(a) + parseInt(b);
+
+            document.getElementById("displayText").innerHTML = sum;
+        }
+    </script>
+
+    <div>
+        <input type="text" name="a" id="firstInput"></input>
+    </div>
+    <div>
+        <input type="text" id="secondInput"></input>    
+    </div>
+
+    <button onclick="displaySum()">Click Me</button>
+
+    <p id="displayText"></p>
+
+</body>
+</html>
