@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = 1;
+        function addToDo(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            
+            const taskList = document.createElement("div");
+            const newTask = document.createElement("div");
+
+            taskList.setAttribute("id","TaskListTest");
+            
+            const firstChild = document.createElement("div");
+            firstChild.innerHTML = title;
+            
+            const secondChild = document.createElement("div");
+            secondChild.innerHTML = description;
+
+            const thirdChild = document.createElement("button");
+            thirdChild.innerHTML = "Mark as Done"
+            thirdChild.setAttribute("onclick",`markAsDone(${id})`);
+            
+            taskList.appendChild(firstChild);
+            taskList.appendChild(secondChild);
+            taskList.appendChild(thirdChild);
+            taskList.setAttribute("id",id);
+            id++;
+
+            document.body.appendChild(taskList);
+
+        }
+    </script>
+    <div>
+        <div>
+            <input id="title" type="text" placeholder="title">
+        </div>
+        <div>
+            <input id="description" type="text" placeholder="description">
+        </div>
+        <button onclick="addToDo()"> Add Task</button>
+    </div>
+</body>
+</html>
