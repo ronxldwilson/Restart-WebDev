@@ -1,1 +1,1 @@
-{"root":["./index.ts","./prog001.ts","./prog002-sum-function.ts","./prog003-return-true-or-false-based-on-age.ts","./prog004-callback-functions.ts"],"version":"5.6.2"}
+{"root":["./src/index.ts","./src/prog001.ts","./src/prog002-sum-function.ts","./src/prog003-return-true-or-false-based-on-age.ts","./src/prog004-callback-functions.ts","./src/prog005-interfaces-in-ts.ts"],"version":"5.6.2"}
